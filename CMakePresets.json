@@ -1,0 +1,21 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "windows-release-flash",
+      "displayName": "Windows Release + ST-LINK 下载",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-windows-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "STM32_AUTO_FLASH": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-release-flash",
+      "configurePreset": "windows-release-flash"
+    }
+  ]
+}

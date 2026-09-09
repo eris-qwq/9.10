@@ -1,0 +1,69 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "STM32: 仅编译",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/编译固件.sh"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "STM32: 仅烧录",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/tools/daplink-flash.sh",
+                "${workspaceFolder}/Firmware/machine_debug_DM_MC02_length_M2006.elf"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "STM32: 一键编译并烧录",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "STM32: 仅编译",
+                "STM32: 仅烧录"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "上位机: 航向角漂移监视器",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "${workspaceFolder}/host_tools/yaw_monitor.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "never",
+                "panel": "dedicated"
+            }
+        }
+    ]
+}

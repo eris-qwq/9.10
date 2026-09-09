@@ -1,0 +1,15 @@
+# STM32 VCOM
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", SYMLINK+="ttyACM15", MODE="0666"
+
+#CH340 STM32
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", KERNELS=="1-9", SYMLINK+="ttyUSB15", MODE="0666"
+
+#CH340 SCREEN
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", KERNELS=="1-8", SYMLINK+="ttyUSB16", MODE="0666"
+
+# H65 USB CAMERA
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="0c45", ATTRS{idProduct}=="6368", ATTR{index}=="0", SYMLINK+="h65_cam"
+
+# RYS DF100-720P
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="32e6", ATTRS{idProduct}=="9221", ATTR{index}=="0", SYMLINK+="df100_cam"
+

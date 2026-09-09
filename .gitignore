@@ -1,0 +1,46 @@
+# Build output
+build/
+build-*/
+cmake-build-*/
+out/
+
+# IDE and local workspace state
+.idea/
+.vscode/*.log
+*.user
+*.suo
+*.uvguix.*
+mx.scratch/
+
+# Keil/ARM generated output
+MDK-ARM/CtrBoard-H7_ALL/
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/_*/
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.obj
+*.d
+*.dep
+*.lst
+*.lnp
+*.htm
+*.crf
+*.iex
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS/editor temporary files
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Keep STM32CubeIDE project settings
+!.settings/
+!.settings/**
